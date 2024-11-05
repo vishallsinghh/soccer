@@ -1,13 +1,150 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 body {
+  overflow-x: hidden;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: "Open Sans", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  font-family: "Open Sans", sans-serif;
 }
+.h-webkit {
+  height: inherit !important;
+}
+.result-bg {
+  background: rgb(88, 88, 88);
+  background: linear-gradient(
+    90deg,
+    rgba(88, 88, 88, 1) 0%,
+    rgba(46, 60, 80, 1) 25%,
+    rgba(31, 41, 55, 1) 100%
+  );
+}
+/* left team progress */
+.progress-container {
+  width: 100px;
+  text-align: center;
+  transform: rotate(180deg);
+}
+.progress-bar2 {
+  height: 8px;
+  border-radius: 30px;
+  background-image: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.3),
+    rgba(255, 255, 255, 0.05)
+  );
+  transition: 0.4s linear;
+  transition-property: width, background-color;
+}
+.progress-moved .progress-bar2 {
+  width: 100%;
+  background-color: #1ed8db;
+  animation: progressAnimation 2s;
+}
+
+@keyframes progressAnimation {
+  0% {
+    width: 5%;
+    background-color: #1ed8db;
+  }
+
+  100% {
+    width: 100%;
+    background-color: #1ed8db;
+  }
+}
+/* right team progresss */
+.progress-container2 {
+  width: 100px;
+  text-align: center;
+}
+
+.progress-bar22 {
+  height: 8px;
+  border-radius: 30px;
+  background-image: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.3),
+    rgba(255, 255, 255, 0.05)
+  );
+  transition: 0.4s linear;
+  transition-property: width, background-color;
+}
+
+.progress-moved2 .progress-bar22 {
+  width: 100%;
+  background-color: #ffffff;
+  animation: progressAnimation2 2s;
+}
+
+@keyframes progressAnimation2 {
+  0% {
+    width: 5%;
+    background-color: #ffffff;
+  }
+  100% {
+    width: 100%;
+    background-color: #ffffff;
+  }
+}
+.live-text-animation {
+  animation: live-text infinite 1s;
+}
+@keyframes live-text {
+  0% {
+    color: red;
+  }
+  50% {
+    color: white;
+  }
+  100% {
+    color: red;
+  }
+}
+
+/* Custom CSS to hide scrollbar */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+/* .slider-container::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background: linear-gradient(
+    90deg,
+    #e7e7e7,
+    hsla(0, 0%, 100%, 0) 80px,
+    hsla(0, 0%, 100%, 0) calc(100% - 80px),
+    #ffffff
+  );
+}
+.slider-container::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background: linear-gradient(
+    270deg,
+    #e7e7e7,
+    hsla(0, 0%, 100%, 0) 80px,
+    hsla(0, 0%, 100%, 0) calc(100% - 80px),
+    #ffffff
+  );
+} */
